@@ -3,9 +3,50 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Makin' Pixel Art</title>
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<script type="text/javascript">
+			var BASE_URL = window.location.href;
+			if (BASE_URL.endsWith('/')) {
+				BASE_URL = BASE_URL.substring(0, BASE_URL.length - 1);
+			}
+			BASE_URL = BASE_URL.split('/#')[0];
+			if (window.location.href.indexOf('#')<0) {
+				history.pushState('', null, '/slides/pixel-art/#/');
+			}
+			(function() {
+				// add styles
+				var styles = document.createElement('link');
+				styles.setAttribute('rel', 'stylesheet');
+				styles.setAttribute('type', 'text/css');
+				styles.setAttribute('href', BASE_URL + '/css/reveal.css');
+				document.head.appendChild(styles);
+				styles = document.createElement('link');
+				styles.setAttribute('rel', 'stylesheet');
+				styles.setAttribute('type', 'text/css');
+				styles.setAttribute('id', 'theme')
+				styles.setAttribute('href', BASE_URL + '/css/theme/black.css');
+				document.head.appendChild(styles);
+				styles = document.createElement('link');
+				styles.setAttribute('rel', 'stylesheet');
+				styles.setAttribute('type', 'text/css');
+				styles.setAttribute('href', BASE_URL + '/lib/css/zenburn.css');
+				document.head.appendChild(styles);
+
+				// add script
+				var scripts = document.createElement('script');
+				// scripts.setAttribute('type', 'text/js');
+				scripts.setAttribute('src', BASE_URL + '/lib/js/head.min.js');
+				document.head.appendChild(scripts);
+				scripts = document.createElement('script');
+				// scripts.setAttribute('type', 'text/js');
+				scripts.setAttribute('src', BASE_URL + '/js/reveal.js');
+				document.head.appendChild(scripts);
+				scripts = document.createElement('script');
+				// scripts.setAttribute('type', 'text/js');
+				scripts.setAttribute('src', BASE_URL + '/js/init.js');
+				document.head.appendChild(scripts);
+				console.log('boop', BASE_URL);
+			})();
+		</script>
 		<style>
 			.reveal section img {
 				background: none;
@@ -19,41 +60,34 @@
 				color: #00aded;
 			}
 		</style>
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
 					<h1>Makin' Pixel Art</h1>
-					<img src="/img/ayla-circle.jpg" width="233" height="233" />
+					<img src="/slides/pixel-art/img/ayla-circle.jpg" width="233" height="233" />
 					<p>Ayla Myers</p>
-					<p>(Find this presentation at <a href="http://brid.gs:3015">http://brid.gs:3015</a>)</p>
+					<p>(Use left and right arrows to navigate presentation)</p>
 				</section>
 
 				<section>
 					<h3>What is pixel art?</h3>
 					<p>Shortest definition ever:<br> A grid of colored pixels where each pixel is important</p>
-					<img src="/img/megaman.png" width="420" height="340" />
+					<img src="/slides/pixel-art/img/megaman.png" width="420" height="340" />
 				</section>
 
 				<section>
 					<h3>How did pixel art come about?</h3>
 					<p>Back in the day, computers weren't as good and pixel art<br> was our best option for displaying graphics</p>
-					<img src="/img/mario-1.png" width="450" height="270" />
+					<img src="/slides/pixel-art/img/mario-1.png" width="450" height="270" />
 					<p>Now we have other options,<br> but pixel art survives as an art form</p>
 				</section>
 
 				<section>
 					<h3>Why is pixel art great?</h3>
 					<p>My dad really loves haikus</p>
-					<img src="/img/poem.jpg" width="259" height="194" />
+					<img src="/slides/pixel-art/img/poem.jpg" width="259" height="194" />
 					<p>The goal is to use<br>
 					very few syllables to<br>
 					paint beautiful scenes</p>
@@ -62,19 +96,19 @@
 				<section>
 					<h3>Why is pixel art great?</h3>
 					<p>I really love pixel art</p>
-					<img src="/img/bonsai.png" width="150" height="180" />
+					<img src="/slides/pixel-art/img/bonsai.png" width="150" height="180" />
 					<p>The goal is to use very few colors and very<br> limited space to paint beautiful scenes</p>
 				</section>
 
 				<section>
 					<h3>How do I get started?</h3>
 					<p>The best way to learn is to make some yourself, so...<br> remember Space Invaders?</p>
-					<img src="/img/invader-3.gif" width="559" height="356" />
+					<img src="/slides/pixel-art/img/invader-3.gif" width="559" height="356" />
 				</section>
 
 				<section>
 					<h3>Activity 1: Create a Space Invader</h3>
-					<img src="/img/invader-1.png" width="410" height="110" />
+					<img src="/slides/pixel-art/img/invader-1.png" width="410" height="110" />
 					<p>
 						<ul>
 							<li>White on black</li>
@@ -91,15 +125,15 @@
 					<h3>Making it move</h3>
 					<p>A <span class="vocab">frame</span> is a still image</p>
 					<figure>
-						<img src="/img/megaman-run-frames.gif" width="400" height="120" />
+						<img src="/slides/pixel-art/img/megaman-run-frames.gif" width="400" height="120" />
 					</figure>
 					<p>By displaying frames in quick succession we create the illusion of movement</p>
-					<img src="/img/megaman-run.gif" width="130" height="120" />
+					<img src="/slides/pixel-art/img/megaman-run.gif" width="130" height="120" />
 				</section>
 
 				<section>
 					<h3>Activity 2: Animate your Space Invader</h3>
-					<img src="/img/invader-2.gif" width="410" height="110" />
+					<img src="/slides/pixel-art/img/invader-2.gif" width="410" height="110" />
 					<p>
 						<ul>
 							<li>Duplicate the first frame of your invader</li>
@@ -113,7 +147,7 @@
 				<section>
 					<h3>Creating an outline</h3>
 					<p>Let's try making a more complex sprite</p>
-					<img src="/img/frog2.gif" width="324" height="264" />
+					<img src="/slides/pixel-art/img/frog2.gif" width="324" height="264" />
 					<p>We'll start with just the outline<br> and the basic blocks of color</p>
 				</section>
 
@@ -121,22 +155,22 @@
 					<h3>Creating an outline</h3>
 					<p>Two strategies to get a basic outline:</p>
 					<p>1. Fiddle with some lines, then fill them in</p>
-					<img src="/img/frog3.gif" width="750" height="132" />
+					<img src="/slides/pixel-art/img/frog3.gif" width="750" height="132" />
 					<p>2. Sculpt some color blobs, then outline them</p>
-					<img src="/img/frog4.gif" width="750" height="132" />
+					<img src="/slides/pixel-art/img/frog4.gif" width="750" height="132" />
 				</section>
 
 				<section>
 					<h3>Jaggies bad!</h3>
 					<p>When drawing lines, avoid <span class="vocab">jaggies</span>!</p>
-					<img src="/img/jaggies-bad.png" width="392" height="128" />
+					<img src="/slides/pixel-art/img/jaggies-bad.png" width="392" height="128" />
 					<p>Use loosely-connected groups of pixels instead</p>
-					<img src="/img/jaggies-good.png" width="392" height="128" />
+					<img src="/slides/pixel-art/img/jaggies-good.png" width="392" height="128" />
 				</section>
 
 				<section>
 					<h3>Activity 3: Create an outline</h3>
-					<img src="/img/implied-shapes-3.png" width="412" height="330" />
+					<img src="/slides/pixel-art/img/implied-shapes-3.png" width="412" height="330" />
 					<p>
 						<ul>
 							<li>Create an outline with color blocks</li>
@@ -152,44 +186,44 @@
 					<h3>Coloring a sprite</h3>
 					<p>Thinking of colors in terms of HSL</p>
 					<p>Different <span class="vocab">hues</span> (but same saturation/lightness):</p>
-					<img src="/img/hsl-1.png" width="300" height="50" />
+					<img src="/slides/pixel-art/img/hsl-1.png" width="300" height="50" />
 					<p>Different <span class="vocab">saturations</span> (but same hue/lightness):</p>
-					<img src="/img/hsl-2.png" width="300" height="50" />
+					<img src="/slides/pixel-art/img/hsl-2.png" width="300" height="50" />
 					<p>Different <span class="vocab">lightness</span> (but same hue/saturation):</p>
-					<img src="/img/hsl-3.png" width="300" height="50" />
+					<img src="/slides/pixel-art/img/hsl-3.png" width="300" height="50" />
 				</section>
 				-->
 
 				<section>
 					<h3>Coloring a sprite</h3>
 					<p>Once we have the basic shape and colors, we want to add highlights and shadows to make our sprite appear 3D</p>
-					<img src="/img/ball-shading-1.png" width="330" height="300" />
+					<img src="/slides/pixel-art/img/ball-shading-1.png" width="330" height="300" />
 				</section>
 
 				<section>
 					<h3>Coloring a sprite</h3>
 					<p>Choose a direction for your light source</p>
-					<img src="/img/ball-shading-2.png" width="350" height="320" />
+					<img src="/slides/pixel-art/img/ball-shading-2.png" width="350" height="320" />
 					<p>Usually the light is coming from above,<br> to the side, and slightly in front</p>
 				</section>
 
 				<section>
 					<h3>Coloring a sprite</h3>
 					<p>The decision of how many colors to use is up to you!</p>
-					<img src="/img/ball-shading-3.png" width="854" height="161" />
+					<img src="/slides/pixel-art/img/ball-shading-3.png" width="854" height="161" />
 					<p>But in general, only add a color if it will<br> meaningfully contribute to your piece</p>
 				</section>
 
 				<section>
 					<h3>Color ramps</h3>
 					<p>The colors you choose for highlights/shadows can be arranged from dark to light to form a <span class="vocab">color ramp</span></p>
-					<img src="/img/ball-shading-4.png" width="350" height="200" />
+					<img src="/slides/pixel-art/img/ball-shading-4.png" width="350" height="200" />
 				</section>
 
 				<section>
 					<h3>Color ramps</h3>
 					<p>A complete palette is just a bunch of color ramps</p>
-					<img src="/img/color-ramp-5.png" width="408" height="324" />
+					<img src="/slides/pixel-art/img/color-ramp-5.png" width="408" height="324" />
 					<p>By finding colors that can be used in multiple color ramps, you lower your color count and create visual consistency</p> 
 				</section>
 
@@ -197,28 +231,28 @@
 				<section>
 					<h3>Color ramps</h3>
 					<p>In real life light and shadows change the hue of an object</p>
-					<img src="/img/color-ramp-1.jpg" width="772" height="428" />
+					<img src="/slides/pixel-art/img/color-ramp-1.jpg" width="772" height="428" />
 					<p>This is called <span class="vocab">hue shifting</span></p>
 				</section>
 
 				<section>
 					<h3>Color ramps</h3>
 					<p>Highlights tend to be more yellow,<br>shadows tend to be more blue</p>
-					<img src="/img/color-ramp-2.jpg" width="769" height="384" />
+					<img src="/slides/pixel-art/img/color-ramp-2.jpg" width="769" height="384" />
 				</section>
 				-->
 
 				<!--<section>
 					<h3>Color ramps</h3>
 					<p>Glossy objects reflect light directly and tend<br> to experience very little hue shift</p>
-					<img src="/img/color-ramp-3.jpg" width="557" height="415" />
+					<img src="/slides/pixel-art/img/color-ramp-3.jpg" width="557" height="415" />
 				</section>-->
 
 				<!--
 				<section>
 					<h3>Color ramps</h3>
 					<p>Here's my froggie with and without hue shifting</p>
-					<img src="/img/color-ramp-4.png" width="820" height="250" />
+					<img src="/slides/pixel-art/img/color-ramp-4.png" width="820" height="250" />
 					<p>The frog on the left is more visually consistent</p>
 					<p>By hue shifting we also get to reuse a color&mdash;the lightest green is the same color as the lightest yellow</p> 
 				</section>
@@ -226,7 +260,7 @@
 
 				<section>
 					<h3>Activity 4: Color your sprite</h3>
-					<img src="/img/frog6.png" width="512" height="280" />
+					<img src="/slides/pixel-art/img/frog6.png" width="512" height="280" />
 					<p>
 						<ul>
 							<li>Add shadows and highlights</li>
@@ -240,32 +274,10 @@
 
 				<section>
 					<h3>Thank you!!</h3>
-					<img src="/img/invader-4.gif" width="80" height="40" />
+					<img src="/slides/pixel-art/img/invader-4.gif" width="80" height="40" />
 					<p>Y'all are beautiful pixel artists now!</p>
 				</section>
 			</div>
 		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-		<script>
-			Reveal.initialize({
-				controls: false,
-				progress: true,
-				history: true,
-				overview: true,
-				center: true,
-				transition: 'none',
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
 	</body>
 </html>
